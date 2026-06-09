@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Report Viewer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="hero">
+            <h1>Dynamic Report Viewer</h1>
+            <p>Upload once, search instantly, and inspect multiple report rows in detail.</p>
+        </header>
+
+        <section class="upload-zone" aria-label="Upload section">
+            <div class="upload-controls">
+                <label for="fileInput" id="pickFileBtn" class="btn btn-secondary">Choose File</label>
+                <input type="file" id="fileInput" accept=".xlsx,.xls,.csv">
+                <button id="uploadBtn" class="btn btn-primary" type="button">Upload</button>
+            </div>
+
+            <div id="uploadFeedback" class="upload-feedback" aria-live="polite"></div>
+        </section>
+
+        <div class="search-bar-container">
+            <input type="text" id="searchInput" placeholder="Search reports, paths, menus, descriptions...">
+        </div>
+
+        <main class="stack-layout">
+            <section class="table-section">
+
+                <div class="table-header">
+                    <h2>Report List</h2>
+                    <span id="recordCount">0 Records</span>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table id="reportTable">
+
+                        <thead id="tableHead">
+                            <!-- Dynamic Headers -->
+                        </thead>
+
+                        <tbody id="tableBody">
+                            <!-- Dynamic Rows -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="table-footer-note">
+                    Click rows to toggle selection. Multiple selection is enabled.
+                </div>
+
+            </section>
+
+            <section class="detail-panel">
+
+                <div class="detail-header">
+                    <h2>Report Details</h2>
+                </div>
+
+                <div id="detailContent" class="detail-content">
+
+                    <div class="empty-state">
+                        Select a row to view details
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
