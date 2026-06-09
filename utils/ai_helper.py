@@ -2,7 +2,7 @@ import google.generativeai as genai
 import json
 import os
 #GOOGLE AI STUDIO KEY FOR API KEY
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY", "AIzaSyDvR4OES8UbT3FwyuEp171dOH7wB9MPc3Y"))
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY", "YOUR-KEY"))
 
 model = genai.GenerativeModel("gemini-2.0-flash")
 
